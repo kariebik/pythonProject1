@@ -170,26 +170,26 @@
 #
 # factor(x)
 
-def is_prime(x):
-    if x<0 or int(x) != x:
-        raise Exception("number must be a positive integer")
-    total = 0
-    for i in range(1, x + 1):
-        if x % i == 0:
-            total += i
-    if total > (x + 1):
-        return False
-    else:
-        return True
-
-x = eval(input("enter number: "))
-# print(is_prime(x))
-
-def lst_prime(x):
-    lst = []
-    for k in range(2, x):
-        if is_prime(k):
-            lst.append(k)
-    print(lst)
-
-lst_prime(x)
+# def is_prime(x):
+#     if x<0 or int(x) != x:
+#         raise Exception("number must be a positive integer")
+#     total = 0
+#     for i in range(1, x + 1):
+#         if x % i == 0:
+#             total += i
+#     if total > (x + 1):
+#         return False
+#     else:
+#         return True
+#
+# x = eval(input("enter number: "))
+# # print(is_prime(x))
+#
+# def lst_prime(x):
+#     lst = []
+#     for k in range(2, x):
+#         if is_prime(k):
+#             lst.append(k)
+#     print(lst)
+#
+# lst_prime(x)
