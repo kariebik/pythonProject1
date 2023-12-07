@@ -159,7 +159,7 @@
 #     point2 = [int(p) for p in input("enter the coordinates of second vertex").split(", ")]
 #     point3 = [int(p) for p in input("enter the coordinates of third vertex").split(", ")]
 #     hypotenuse(point1, point2, point3)
-
+#
 # x = eval(input())
 # def factor(x):
 #     if int(x) != x:
@@ -193,3 +193,132 @@
 #     print(lst)
 #
 # lst_prime(x)
+
+# def index_of_min(lst):
+#     value = 1000000
+#     index_val = 0
+#     for i in range(len(lst)):
+#         if lst[i] < value:
+#            value = lst[i]
+#            index_val = i
+#     print(index_val)
+#
+#
+# lst = input("enter list:").split(" ")
+# lst3 =[int(x) for x in lst]
+#
+# index_of_min(lst3)
+
+# n = int(input("enter digit: "))
+# zz = input("enter: ")
+# print(zz[0] + zz[1])
+# print("your name is "+ zz.capitalize())
+
+# def pas_wrd(n):
+#     if len(n) < 8:
+#         return "invalid password"
+#     if not any(x.isalnum() for x in n):
+#         return "invalid password"
+#     if not any(x.isdigit() for x in n) and not any(x.isalpha() for x in n):
+#         return "invalid password"
+#     return "Valid password"
+
+# print(pas_wrd(zz))
+
+# def encryptz(n, val):
+#     f_val = ""
+#     for i in val:
+#         r = ((ord(i) - ord("a") + n) % 25) + ord("a")
+#         thing = chr(r)
+#         f_val += thing
+#     print(f_val)
+
+# encryptz(n, zz)
+
+# def dice_ten(n, m):
+#     tens = 0
+#     for i in range(n + 1):
+#         for k in range(m+1):
+#             if i + k == 10:
+#                 tens += 1
+#     print("There are", tens, "ways to get the sum 10")
+#
+# n = int(input("enter: "))
+# m = int(input("enter: "))
+# dice_ten(n, m)
+
+# def is_magic():
+#     r1 = [int(x) for x in input("enter row 1: ").split(" ")]
+#     r2 = [int(x) for x in input("enter row 2: ").split(" ")]
+#     r3 = [int(x) for x in input("enter row 3: ").split(" ")]
+#     r4 = [int(x) for x in input("enter row 4: ").split(" ")]
+#     c = []
+#     for i in range(4):
+#         k = r1[i] + r2[i] + r3[i] + r4[i]
+#         c.append(k)
+#     if sum(r1) == sum(r2) == sum(r3) == sum(r4) == c[0] == c[1] == c[2] == c[3]:
+#         return "Magic"
+#     return "not magic"
+#
+# print(is_magic())
+
+# lst1 =[1, 2, 3, 4, 5]
+# lst2 = [6]
+# print(lst1 + lst2)
+
+# def is_palindrome(lst):
+#     lst2 = lst[::-1]
+#     if lst == lst2:
+#         return True
+#     return False
+#
+# def pali_leng(lst_1):
+#     p = []
+#     for k in range(len(lst_1)):
+#         for n in range(len(lst_1)):
+#             if is_palindrome(lst_1[k:n]):
+#                 p.append((n+2) - k)
+#
+#     p.sort(reverse=True)
+#     return p[0]
+#
+#
+# print(pali_leng("abababyabababa"))
+
+# def encryptz(n, val):
+#     f_val = ""
+#     for i in val:
+#         r = ((ord(i) - ord("a") + n) % 25) + ord("a")
+#         thing = chr(r)
+#         f_val += thing
+#     print(f_val)
+
+def rovarspraket(word):
+    vowel = ["a", "e", "i", "o", "u"]
+    result = ""
+    for x in word:
+        if x in vowel:
+            result += x
+        else:
+            result += x
+
+            if ord("a") < ord(x) < ord("d"):
+                result += "a"
+            elif ord("d") <= ord(x) < ord("h"):
+                result += "e"
+            elif ord("h") <= ord(x) < ord("l"):
+                result += "i"
+            elif ord("l") <= ord(x) < ord("s"):
+                result += "o"
+            elif ord("s") <= ord(x) <= ord("z"):
+                result += "u"
+
+            if chr(ord(x) +1) in vowel:
+                result += chr(ord(x) +2)
+            else:
+                result += chr(ord(x) + 1)
+
+
+    return result
+
+print(rovarspraket("joy"))
