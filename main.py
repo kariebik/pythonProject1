@@ -293,32 +293,81 @@
 #         f_val += thing
 #     print(f_val)
 
-def rovarspraket(word):
-    vowel = ["a", "e", "i", "o", "u"]
-    result = ""
-    for x in word:
-        if x in vowel:
-            result += x
-        else:
-            result += x
+# def rovarspraket(word):
+#     if not isinstance(word, str):
+#         raise TypeError
+#     vowel = ["a", "e", "i", "o", "u"]
+#     result = ""
+#     for x in word:
+#         if not 97 <= ord(x) <= 122:
+#             raise ValueError
+#         if x in vowel:
+#             result += x
+#         else:
+#             result += x
+#             if ord("a") < ord(x) < ord("d"):
+#                 result += "a"
+#             elif ord("d") <= ord(x) < ord("h"):
+#                 result += "e"
+#             elif ord("h") <= ord(x) < ord("l"):
+#                 result += "i"
+#             elif ord("l") <= ord(x) < ord("s"):
+#                 result += "o"
+#             elif ord("s") <= ord(x) <= ord("z"):
+#                 result += "u"
+#             if ord(x) == ord('z'):
+#                 result += 'a'
+#             else:
+#                 if chr(ord(x) +1) in vowel:
+#                     result += chr(ord(x) +2)
+#                 else:
+#                     result += chr(ord(x) + 1)
+#
+#
+#     return result
+#
+# try:
+#     print(rovarspraket("like"))
+# except ValueError:
+#     print("Input must contain only lowercase letters.")
+# except TypeError:
+#     print("input must be a string.")
 
-            if ord("a") < ord(x) < ord("d"):
-                result += "a"
-            elif ord("d") <= ord(x) < ord("h"):
-                result += "e"
-            elif ord("h") <= ord(x) < ord("l"):
-                result += "i"
-            elif ord("l") <= ord(x) < ord("s"):
-                result += "o"
-            elif ord("s") <= ord(x) <= ord("z"):
-                result += "u"
+# dic = {}
+# lst = [1, 2, 3]
+# lst2 = ['one', 'two', 'there']
+# for k in range(len(lst)):
+#     dic[lst[k]] = lst2[k]
+#
+# print(dic)
 
-            if chr(ord(x) +1) in vowel:
-                result += chr(ord(x) +2)
-            else:
-                result += chr(ord(x) + 1)
+# dic1 = {'one': 1, 'two':2, 'three':3}
+# dic2 = {'four':4, 'five':5, 'six':6}
+# dic3 = {}
+#
+# for key in dic1:
+#     dic3[key] = dic1[key]
+# for key in dic2:
+#     dic3[key] = dic2[key]
+# print(dic3)
+
+# def keeping_score():
+#     card_v = {'A':4, 'K':3, 'Q':2, 'J':1}
+#     total =0
+# def sec_type():
+#     k = []
+#     dic = {'a':1, 'd':1, 'g':1, 'j':1, 'm':1, 'p':1, 't':1, 'w':1, 'b':2, 'e':2, 'h':2, 'k':2, 'n':2, 'q':2, 'u':2, 'x':2, 'c':3, 'f':3, 'i':3, 'l':3, 'o':3, 'r':3, 'v':3, 'y':3, 's':4, 'z':4}
+#     z = input("enter: ")
+#     k.append(z)
+#     while z != 'halt':
+#         z = input("enter: ")
+#         k.append(z)
+#     for x in k:
+#         length = len(x)
+#         total = 0
+#         for i in range(length - 1):
+#             if x[i] in dic:
+#                 total += dic[x[i]]
+#         print(total)
 
 
-    return result
-
-print(rovarspraket("joy"))
