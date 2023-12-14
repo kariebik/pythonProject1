@@ -1,4 +1,4 @@
 import math
 from tkinter import *
 
-def multiply(n, m)
+def multiply(n, m):
