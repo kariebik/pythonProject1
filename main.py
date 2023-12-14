@@ -369,5 +369,45 @@
 #             if x[i] in dic:
 #                 total += dic[x[i]]
 #         print(total)
+import random
+class Card:
+     def __init__(self, suit, value):
+         if suit not in ['clubs', 'diamonds', 'hearts', 'spades']:
+            raise ValueError
+         if not (value in [2, 3, 4, 5, 6, 7, 8, 9, 10] or value in ['A', 'K', 'J', 'Q']):
+            raise ValueError
+         self.suit = suit
+         self.value = value
+     def __add__(self, other):
+         if not isinstance(other, Card):
+             raise TypeError
+         dic ={'A':1, 'K':10, 'J':10, 'Q':10}
+         if isinstance(other.value, int):
+            n_v = self.value + other.value
+         else:
+             n_v = self.value + dic[other.value]
+         return n_v
+
+class Pack:
+    def __init__(self):
+        self.cards = []
+        suits = ['clubs', 'diamonds', 'hearts', 'spades']
+        vals = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'K', 'J', 'Q']
+        for i in range(4):
+            for k in range(len(vals)):
+                self.cards.append(Card(suits[i], vals[k]))
+
+    def __repr__(self):
+        return self.cards
+
+    def __add__(self, other):
+        if not isinstance(other, Card):
+            raise TypeError
+        if other not in self.cards:
+            self.cards.append(other)
 
 
+    def __sub__(self, other):
+        if not isinstance(other, Card):
+            raise TypeError
+        self.cards.remove(other)
